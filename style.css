@@ -14,10 +14,6 @@ svg {
   pointer-events: none;
 }
 
-.pad {
-  transition: all 500ms ease;
-}
-
 .kick-pad,
 .clap-pad,
 .hihat-pad,
@@ -125,6 +121,10 @@ svg {
   transition: all 300ms ease;
 }
 
+.pad {
+  transition: all 0.5s ease;
+}
+
 select {
   font-family: "Open Sans", sans-serif;
   font-weight: 500;
@@ -148,4 +148,13 @@ option {
   background: linear-gradient(-45deg, rgb(48, 214, 103) 0%, rgb(38, 231, 196) 100%);
   border-radius: 5px;
   margin-top: 3rem;
+}
+
+@keyframes playTrack {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.2);
+  }
 }
