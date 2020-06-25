@@ -9,6 +9,7 @@ class DrumKit {
     this.index = 0;
     this.bpm = 150;
     this.playButton = document.querySelector(".play");
+    this.isPlaying = null;
   }
   activePad() {
     this.classList.toggle("active");
@@ -47,9 +48,27 @@ class DrumKit {
   }
   start() {
     const interval = (60 / this.bpm) * 1000;
-    setInterval(() => {
-      this.repeat();
-    }, interval);
+    //Check if it is playing
+    if (!this.isPlaying) {
+      this.isPlaying = setInterval(() => {
+        this.repeat();
+      }, interval);
+    }
+    //Clear the interval
+    else {
+      clearInterval(this.isPlaying);
+      this.isPlaying = null;
+    }
+  }
+  //Updating the Play button text to Stop when the loop is active
+  updateButton() {
+    if (!this.isPlaying) {
+      this.playButton.innerText = "Stop";
+      this.playButton.classList.add("active");
+    } else {
+      this.playButton.innerText = "Play";
+      this.playButton.classList.remove("active");
+    }
   }
 }
 
@@ -63,5 +82,6 @@ drumKit.pads.forEach((pad) => {
 });
 
 drumKit.playButton.addEventListener("click", () => {
+  drumKit.updateButton();
   drumKit.start();
 });
