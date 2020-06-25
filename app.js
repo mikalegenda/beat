@@ -65,3 +65,5 @@ drumKit.pads.forEach((pad) => {
 drumKit.playButton.addEventListener("click", () => {
   drumKit.start();
 });
+
+Mika legenda
