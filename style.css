@@ -150,6 +150,10 @@ option {
   margin-top: 3rem;
 }
 
+.mute.active {
+  background: rgb(114, 114, 114);
+}
+
 @keyframes playTrack {
   from {
     transform: scale(1);
