@@ -7,7 +7,7 @@ class DrumKit {
     this.hihatAudio = document.querySelector(".hihat-sound");
     this.openhatAudio = document.querySelector(".openhat-sound");
     this.index = 0;
-    this.bpm = 150;
+    this.bpm = 230;
     this.playButton = document.querySelector(".play");
     this.isPlaying = null;
   }
