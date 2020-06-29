@@ -73,7 +73,7 @@ svg {
 .kick-track {
   display: flex;
   align-items: center;
-  width: 75%;
+  width: 85%;
   justify-content: space-between;
   margin-top: 3rem;
 }
